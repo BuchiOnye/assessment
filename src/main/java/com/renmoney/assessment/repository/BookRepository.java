@@ -14,17 +14,17 @@ import com.renmoney.assessment.model.Book;
 public interface BookRepository extends JpaRepository<Book, Long> {
 	
 	@Query(value = "select id ,name, description, registration_number, publisher, author, genre from books "
-			+ "where (lower(name) like '%:search' "
-			+ "or lower(description) like '%:search' or "
-			+ "lower(registration_number) like '%:search' or "
-			+ "lower(author) like '%:search' or "
-			+ "lower(genre) like '%:search')",
+			+ "where (lower(name) like %:search% "
+			+ "or lower(description) like %:search% or "
+			+ "lower(registration_number) like %:search% or "
+			+ "lower(author) like %:search% or "
+			+ "lower(genre) like %:search% )",
 		countQuery = "SELECT count(id) FROM books "
-				+ "where (lower(name) like '%:search' "
-				+ "or lower(description) like '%:search' or "
-				+ "lower(registration_number) like '%:search' or "
-				+ "lower(author) like '%:search' or "
-				+ "lower(genre) like '%:search')",
+				+ "where (lower(name) like %:search% "
+				+ "or lower(description) like %:search% or "
+				+ "lower(registration_number) like %:search% or "
+				+ "lower(author) like %:search% or "
+				+ "lower(genre) like %:search% )",
 				nativeQuery = true)
 	Page<BookDto> getBookBySearchParam(@Param("search") String searchParam, Pageable pageable);
 	

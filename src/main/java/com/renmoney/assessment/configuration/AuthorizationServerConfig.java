@@ -10,7 +10,6 @@ import java.util.Arrays;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -25,27 +24,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-
-    @Value("${jwt.client-id}")
-    private String clientId;
-
-    @Value("${jwt.client-secret}")
-    private String clientSecret;
-
-    @Value("${jwt.grant-type}")
-    private String grantType;
-    
-    @Value("${jwt.grant-type2}")
-    private String grantType2;
-
-    @Value("${jwt.scope-read}")
-    private String scopeRead;
-
-    @Value("${jwt.scope-write}")
-    private String scopeWrite = "write";
-
-    @Value("${jwt.resource-ids}")
-    private String resourceIds;
 
     @Autowired
     private TokenStore tokenStore;
