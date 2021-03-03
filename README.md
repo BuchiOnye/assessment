@@ -35,6 +35,19 @@ Copy configuration file (application.poperties) to same directory with previousl
 Modify database connection credentials e.g datasource.url, datasource.username and datasource.password if desired
 Run 
 $ java -jar library-service.jar
+
+Alternatively install docker on your device
+Navigate to project directory
+
+To build project,
+
+Run 
+docker build -t library-service:latest .
+
+To start application
+Run 
+docker run --rm -it -p 8081:8081 --name library-service library-service:latest
+
 ```
 
 ## Launch
