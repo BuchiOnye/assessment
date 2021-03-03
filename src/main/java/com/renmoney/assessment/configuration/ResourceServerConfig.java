@@ -38,7 +38,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/oauth/**", "/swagger*/**", 
                         "/webjars/**", 
                         "/css/**", "/h2-console/**", "/actuator/health/").permitAll()
-                .antMatchers("/books/**").authenticated();
+                .antMatchers("/library/books/**").authenticated();
         
         http.csrf().disable();
         http.headers().frameOptions().disable();

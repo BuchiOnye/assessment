@@ -33,7 +33,7 @@ public class LibraryController {
 	LibraryService libraryService;
 
 	@GetMapping
-	public ResponseEntity<BookSearchResponse> verifyPaymentStatusOfRequest(
+	public ResponseEntity<BookSearchResponse> getBookCollection(
 			@RequestParam(defaultValue = "1") Integer pageNumber,
 			@RequestParam(defaultValue = "10") Integer pageSize,
 			@RequestParam(defaultValue = "") String seachParam,
