@@ -1,4 +1,4 @@
-### RenMoney Assessment Test
+### Secured Library RESTAPI Project
 
 This project includes 
 * implementation to retrieve items from a designated datasource
